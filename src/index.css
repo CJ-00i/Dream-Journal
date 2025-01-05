@@ -1,0 +1,652 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+head {
+    padding: 300px;
+}
+
+body {
+    font-family: montserrat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top {
+    position: absolute;
+    background: transparent;
+    float: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.top-scrolled {
+    background-color: rgb(24, 99, 112);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-bottom {
+    background-color: rgb(159, 171, 173);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.background-image {
+    background-image: url("./assets/download_LE_upscale_balanced_x4.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    filter: brightness(0.9);
+}
+
+label.logo {
+    color: #fff;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: 1s;
+}
+
+nav ul li.active a {
+    background: #82e8e8;
+    color: black;
+}
+
+nav ul li a:hover {
+    background: #82e8e8;
+}
+
+/* New Rule: Remove active styles when any other a element is hovered */
+nav ul:hover > li a:not(:hover) {
+    background: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background: #82e8e8;
+    color: black;
+}
+
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .name {
+        margin-bottom: 0px;
+    }
+    
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: transparent;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        color: snow;
+        font-size: 20px;
+    }
+    a.active, a:hover {
+        background: none;
+        color: pink;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+.home {
+    display: flex;
+}
+
+.home img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.home .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(247, 141, 159);
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.fixed-size-image, .layer, .divide {
+    width: 100vw; 
+    height: 100vh;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.dream-journal {
+    padding: 50px;
+    text-align: justify;
+    background: hsl(218, 100%, 91%);
+}
+
+.main {
+    padding: 40px 150px 50px 150px;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.journal {
+    width: 70%;
+    height: 85%;
+    min-height: 80%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    backdrop-filter: blur(18px);
+    color: inherit;
+}
+
+
+.journalTitle {
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+}
+
+.journalTitle input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px 45px 20px 20px;
+}
+
+.journalTitle input::placeholder {
+    color: inherit;
+}
+
+
+.category-dropdown {
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+}
+
+.select, .select-clicked {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.select-clicked {
+    border: 2px #26489a solid;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+.select:hover, .journalTitle:hover, .date:hover, .content:hover {
+    border: 2px #26489a solid;
+    box-shadow: 0 0 0.8em #26489a;
+}
+
+.caret, .caret-rotate {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    align-self: flex-end;
+    margin-left: auto;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu, .menu-open{
+    font-size: 16px;
+    color: #fff;
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #323741;
+    border: 1px #363a43 solid;
+    box-shadow: 0 0.5 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: #9fa5b5;
+    position: absolute;
+    left: 82.5%;
+    width: 30%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu-open li {
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu-open li:hover {
+    background: #2a2d35;
+}
+
+.active2 {
+    background: blue;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.date {
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+}
+
+.date input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.content {
+    width: 95%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.content textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    resize: none;
+}
+
+.content textarea::placeholder {
+    color: inherit;
+}
+
+.journal-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.clear {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.save {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.sideNav {
+    width: 30%;
+    height: 85%;
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+}
+
+.sideNav h2 {
+    text-align: center;
+    color: #fff;
+}
+
+.product, .product-archives {
+    width: 300px; 
+    height: 30%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.sideNav .product img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.title-display,
+.date-display,
+.category-display {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    text-indent: 5%;
+    z-index: 2; 
+}
+
+.title-display {
+    bottom: 50%; 
+}
+
+.date-display {
+    bottom: 30%; 
+}
+
+.category-display {
+    bottom: 10%; 
+}
+
+.current-word-cloud {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.generate-wc {
+    background-color: #26489a;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.download-wc {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.information-div {
+    background: whitesmoke;
+    width: 100%;
+    height: 150%;
+}
+
+
+.divide {
+    background: linear-gradient(#c6f0ff, #9dc2f6);
+}
+
+.journals {
+    width: 100%;
+    height: 85%;
+    min-height: 80%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    backdrop-filter: blur(18px);
+    overflow-x: hidden; 
+}
+
+.journals-display {
+    width: 100%;
+    height: 85%;
+    min-height: 80%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px;
+    align-content: space-around;
+    backdrop-filter: blur(18px);
+    overflow-x: hidden; 
+}
+
+
+
+.delete-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Increased padding for visibility */
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Ensure it's above other elements */
+    margin-top: 250px; /* Add some space above the button */
+    position: relative; /* Ensure it's positioned correctly */
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.delete-btn:focus {
+    outline: none; /* Remove the default outline for better styling */
+}
+
+
+.container {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url("../Clouds/Clouds 5/1.png");
+    background-size: cover;
+    background-position: top left, top right, bottom left, bottom right, center center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure it stays in the background */
+}
+
+.content-about {
+    max-width: 800px;  /* Limit the content width to 800px */
+    margin: 0 auto;   /* Center the content */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.title-about {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.link {
+    color: #26489a;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footerTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footerList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footerItem {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
