@@ -37,7 +37,7 @@ function TheWordCloud() {
             </label>
             <label className="logo">Archives</label>
             <ul>
-                <li><Link to="/DreamJournal">Journal</Link></li>
+                <li><Link to="/Dream-Journal">Journal</Link></li>
                 <li className="active"><Link to="/archives">ARCHIVES</Link></li>
                 <li><Link to="/about">About</Link></li>
             </ul>
