@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import maincloud1 from "../Clouds/Clouds 5/1.png";
-import maincloud2 from "../Clouds/Clouds 5/2.png";
-import maincloud3 from "../Clouds/Clouds 5/3.png";
-import maincloud4 from "../Clouds/Clouds 5/4.png";
-import maincloud5 from "../Clouds/Clouds 5/5.png";
+import { Link } from "react-router-dom"; 
+
 
 function About() {
-    const [isChecked, setIsChecked] = useState(false); // Add state for the checkbox
+    const [isChecked, setIsChecked] = useState(false); 
 
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked); // Toggle the checkbox state
+        setIsChecked(!isChecked); 
     };
 
     return (
@@ -29,8 +25,8 @@ function About() {
                     <label className="logo">Archives</label>
                     <ul>
                         <li><Link to="/">Journal</Link></li>
-                        <li className="active"><Link to="/archives">ARCHIVES</Link></li>
-                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/archives">ARCHIVES</Link></li>
+                        <li className="active"><Link to="#">About</Link></li>
                     </ul>
                 </nav>
             </header>
@@ -39,9 +35,19 @@ function About() {
                 <div className="content-about">
                     <h1 className="title-about">About This Project</h1>
                     <p className="description">
-                        This project is a dream journal application that allows users to
-                        log and categorize their dreams. It provides features such as text
-                        input, date picking, and a word cloud generator for categorization.
+                        A digital diary for user to log and visualize their dreams with categories and word cloud. 
+                        <br />
+                        <br />
+                        Project Submitted by:   
+                        <ul>
+                            <li>Marinduque</li>
+                            <li>Mata</li>
+                            <li>Malabago</li>
+                            <li>Sanchez</li>
+                            <li>Sangilan</li>
+                        </ul>
+                        <br />
+                        Project Submitted to: Maelyn Joy Sabanal
                     </p>
                 </div>
             </div>
@@ -51,18 +57,8 @@ function About() {
                 <ul className="footerList">
                     <li className="footerItem">
                         <a href="https://opensource.org/licenses/MIT" className="link">
-                            MIT License (for this project)
-                        </a>
-                    </li>
-                    <li className="footerItem">
-                        <a href="https://www.fontawesome.com/license/free" className="link">
-                            Font Awesome Free License
-                        </a> - Used for icons in the project.
-                    </li>
-                    <li className="footerItem">
-                        <a href="https://reactjs.org/docs/license.html" className="link">
-                            React License
-                        </a> - Used for building the user interface.
+                            MIT License
+                        </a> - nlp-compromise
                     </li>
                     <li className="footerItem">
                         <a href="https://craftpix.net/file-licenses/" className="link">
@@ -70,7 +66,7 @@ function About() {
                         </a> - Clouds from Craftpix.
                     </li>
                     <li className="footerItem">
-                        <a href="https://craftpix.net/file-licenses/" className="link">
+                        <a className="link">
                             Pixel Art License for Glacial Mountains
                         </a> - Pixel Art by Vicente Nitti (@vnitti).
                     </li>

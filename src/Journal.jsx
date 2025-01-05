@@ -40,6 +40,8 @@ function Journal({ background, setBackground }) {
       window.localStorage.setItem("data", JSON.stringify(product));
   }, [product]);
 
+  setBackground(initialProduct.background)
+
   const wordCloudRef = useRef(null);
 
   const drop = () => {
@@ -69,6 +71,7 @@ function Journal({ background, setBackground }) {
       setText("");
       setSelected("");
       setFontColor("#ffffff");
+      setBackground(1)
   };
 
   const getProductImage = (background) => {
@@ -88,7 +91,7 @@ function Journal({ background, setBackground }) {
           case 7:
               return cloud8;
           default:
-              return null;
+              return cloud1;
       }
   };
 
