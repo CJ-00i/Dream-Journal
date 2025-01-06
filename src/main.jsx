@@ -10,9 +10,9 @@ import Dream from './Dream'; // Make sure Dream is imported
 
 const router = createBrowserRouter([
   { path: '/Dream-Journal', element: <App /> },
-  { path: '/archives', element: <Archives /> },
-  { path: '/about', element: <About /> },
-  { path: '/dream/:key', element: <Dream /> },
+  { path: '/Dream-Journal/archives', element: <Archives /> },
+  { path: '/Dream-Journal/about', element: <About /> },
+  { path: '/Dream-Journal/dream/:key', element: <Dream /> },
 ]);
 
 createRoot(document.getElementById('root')).render(

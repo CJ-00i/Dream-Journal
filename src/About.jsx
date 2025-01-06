@@ -25,7 +25,7 @@ function About() {
                     <label className="logo">About</label>
                     <ul>
                         <li><Link to="/Dream-Journal">Journal</Link></li>
-                        <li><Link to="/archives">ARCHIVES</Link></li>
+                        <li><Link to="/Dream-Journal/archives">ARCHIVES</Link></li>
                         <li className="active"><Link to="#">About</Link></li>
                     </ul>
                 </nav>

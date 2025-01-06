@@ -152,8 +152,8 @@ function Dream() {
                     <label className="logo">Journal</label>
                     <ul>
                         <li className="active"><Link to="/Dream-Journal">Journal</Link></li>
-                        <li><Link to="/archives">Archives</Link></li>
-                        <li><Link to="/about">ABOUT</Link></li>
+                        <li><Link to="/Dream-Journal/archives">Archives</Link></li>
+                        <li><Link to="/Dream-Journal/about">ABOUT</Link></li>
                     </ul>
                 </nav>
             </header>
