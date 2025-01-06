@@ -22,7 +22,7 @@ function About() {
                     <label htmlFor="check" className="checkbtn">
                         <i className="fa-solid fa-bars" style={{ color: "white" }}></i>
                     </label>
-                    <label className="logo">Archives</label>
+                    <label className="logo">About</label>
                     <ul>
                         <li><Link to="/Dream-Journal">Journal</Link></li>
                         <li><Link to="/archives">ARCHIVES</Link></li>
@@ -38,7 +38,8 @@ function About() {
                         A digital diary for user to log and visualize their dreams with categories and word cloud. 
                         <br />
                         <br />
-                        Project Submitted by:   
+                        Project Submitted by:
+                        <br />
                         <ul>
                             <li>Marinduque</li>
                             <li>Mata</li>
